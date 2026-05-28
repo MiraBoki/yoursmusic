@@ -50,7 +50,6 @@ export default function Footer(){
                                     
                                     <option value="en">English</option>
                                     <option value="mm">Myanmar</option>
-                                    <option value="jp">Japanese</option>
 
                                 </select>
                             </div>
@@ -113,7 +112,7 @@ export default function Footer(){
                     {/* Social */}
                     <div className="border-t border-white/10 mt-14 pt-10 text-center">
 
-                        <h3 className="text-xl font-bold mb-5">Follow us</h3>
+                        <h3 className="text-xl lato-bold mb-5">Follow Us</h3>
 
                         <div className="flex items-center justify-center gap-6 text-2xl">
                             <a href="#" className="hover:text-blue-400 transition"><FontAwesomeIcon icon={faFacebook} /></a>

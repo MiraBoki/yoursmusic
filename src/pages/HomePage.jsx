@@ -15,7 +15,7 @@ import songchart3 from "../assets/homeimgs/songchart3.jpg"
 export default function HomePage(){
 
     return(
-        <div className="w-full min-h-screen bg-gray-900 sm:pt-20">
+        <div className="w-full min-h-screen bg-gray-900">
                 
             {/* Body Section 1 */}
             <main className="relative overflow-hidden min-w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center gap-2 lg:gap-10 text-white mx-auto px-6 pt-2 pb-8 lg:py-0">
@@ -38,7 +38,7 @@ export default function HomePage(){
                         <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent lato-regular">In Seconds</span>
                     </h1>
                     <h4 className="font-bold text-center lg:text-start py-4 lg:py-2 lato-light">Find music, concerts and more with YoursMusic</h4>
-                    <div className="flex items-center gap-3 bg-white/10 rounded-lg px-3 py-4">
+                    <div className="flex items-center gap-3 bg-white/10 rounded-lg px-3 py-4 lg:w-[500px]">
                         <img src={qrimg} alt="qrcode" className="rounded-lg" />
                         <div>
                             <h4 className="font-bold text-lg">Get the app</h4>
@@ -68,7 +68,7 @@ export default function HomePage(){
                         <div className="absolute inset-0 z-10 flex flex-col justify-center text-white lg:static lg:flex-1 px-6 lg:px-0 lg:text-left">
 
                             <h2 className="text-2xl sm:text-4xl md:text-6xl font-light leading-none lato-regular">
-                                YoursMusic<br />
+                                Yours Music<br />
                                 Fast Forward
                             </h2>
 
@@ -158,7 +158,7 @@ export default function HomePage(){
                 {/* Music Slider */}
                 <div className="max-w-7xl mx-auto mt-10 relative">
 
-                    <div className="absolute right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent pointer-events-none"></div>
+                    <div className="absolute hidden sm:block sm:right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent pointer-events-none"></div>
 
                     {/* Scroll Container */}
                     <div id="musicSlider" className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar pb-4">
@@ -256,7 +256,7 @@ export default function HomePage(){
 
                 {/* Background Gradient  */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                    <div className="absolute top-[50px] left-[-100px] w-[300px] h-[400px] bg-red-500/20 blur-[120px] rounded-full"></div>
+                    <div className="absolute top-[150px] left-[-100px] w-[200px] h-[300px] bg-red-500/20 blur-[120px] rounded-full"></div>
                 </div>
                 {/* Background Gradient  */}
 
@@ -267,7 +267,7 @@ export default function HomePage(){
                 
                 <div className="relative max-w-7xl mx-auto mt-10">
 
-                    <div className="absolute right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent pointer-events-none"></div>
+                    <div className="absolute hidden sm:block sm:right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent pointer-events-none"></div>
                     <div id="artistSlider" className="flex gap-6 overflow-x-auto scroll-smooth no-scrollbar">   
                     {[1,2,3,4,5,6,7,8].map((artist) => (
 

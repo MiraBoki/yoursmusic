@@ -2,9 +2,11 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Search, Menu, X } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faPlus, faArrowRight, faMusic ,faHeadphones ,faCompactDisc } from "@fortawesome/free-solid-svg-icons";
 import { faApple } from "@fortawesome/free-brands-svg-icons"
 
 import favicon from "../../assets/favicon.ico"
+import favicon1 from "../../assets/favicon1.png"
 
 export default function Navbar(){
 
@@ -35,89 +37,91 @@ export default function Navbar(){
         return () => window.removeEventListener("scroll", handleScroll)
     }, [])
 
+    const closeSidebar = ()=> setOpenMenu(false);
+
     return(
         <section>
 
             {/* Navbar */}
-            <nav className={`fixed top-0 left-0 z-50 w-full flex items-center justify-between px-5 ${scrolled ? "py-3" : "py-5"} transition-all duration-300 ease-out
-                ${scrolled ? "bg-gradient-to-r from-violet-600/20 via-purple-500/20 to-slate-600/20 shadow-lg backdrop-blur-md border-b border-white/10" : "bg-transparent backdrop-blur-sm shadow-none border-b border-transparent"}`}>
+            <nav className={`fixed top-0 mt-4 left-[50%] -translate-x-[50%] z-100 w-full sm:w-[90%] flex items-center justify-center px-4 sm:px-10 ${scrolled ? "py-3" : "py-5"} transition-all duration-300 ease-out rounded-2xl
+            ${scrolled ? "bg-gradient-to-r from-violet-600/20 via-purple-500/20 to-slate-600/20 shadow-lg backdrop-blur-md border-b border-white/10" : "bg-transparent backdrop-blur-sm shadow-none border-b border-transparent"}`}>
             
-                    <div className="w-auto 2xl:w-1/2 flex items-center justify-between">
+                <div className="w-full flex items-center justify-between">
 
-                        <div className="flex items-center gap-2 select-none">
-                            <img src={favicon} alt="yoursmusiclogo" className="w-8 h-8" />
-                            <Link to="/" className="text-xl font-bold text-white tracking-wider lato-black-italic">Yours Music</Link>
-                        </div>
-
-                        <div className="ml-4 hidden lg:block select-none">
-                            <ul className="text-sm font-bold text-white flex items-center p-3 gap-7 cursor-pointer lato-black">
-                                <Link to="/apps" className="transition duration-300 hover:text-black">Get The App</Link>
-                                <Link to="/pricings" className="transition duration-300 hover:text-bla1ck">Pricing</Link>
-                                <Link to="/charts" className="transition duration-300 hover:text-bla1ck">Charts</Link>
-                                <li className="transition duration-300 hover:text-black">Voice Test</li>
-                                <li className="transition duration-300 hover:text-black">Fast Forward '26</li>
-                            </ul>
-                        </div>
-
+                    <div className="flex items-center gap-2 select-none">
+                        <img src={favicon1} alt="yoursmusiclogo" className="w-6 sm:w-8 h-6 sm:h-8 rounded-full" />
+                        <Link to="/" className="text-md sm:text-xl font-bold text-white tracking-wider lato-black-italic">Yours Music</Link>
                     </div>
 
-            
-                    <div className="flex items-center gap-3">
-                        <div className="relative hidden lg:flex items-center gap-3 text-black">
+                    <div className="hidden xl:block select-none">
+                        <ul className="text-sm font-bold text-white flex items-center p-3 gap-7 cursor-pointer lato-black">
+                            <Link to="/apps" className="transition duration-300 hover:text-gray-600/80">Get The App</Link>
+                            <Link to="/pricings" className="transition duration-300 hover:text-gray-600/80">Pricing</Link>
+                            <Link to="/charts" className="transition duration-300 hover:text-gray-600/80">Charts</Link>
+                            <li className="transition duration-300 hover:text-gray-600/80">Voice Test</li>
+                            <li className="transition duration-300 hover:text-gray-600/80">Fast Forward '26</li>
+                        </ul>
+                    </div>
 
-                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-32 xl:w-64 opacity-100" : "w-0 opacity-0"}`}>
+                    <div className="flex items-center gap-3">
+                        <div className="relative hidden xl:flex items-center gap-3 text-black">
+
+                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-46 xl:w-60 2xl:w-84 opacity-100" : "w-0 opacity-0"}`}>
                                 <input type="text" placeholder="Search for music" className="w-full px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 outline-none"/>
                             </div>
                             <Search onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 transition"/>
-                            <a href="#" className="flex items-center gap-1 border border-white/40 px-4 py-2 rounded-full bg-white/70 hover:bg-white/20 transition">
-                                <span className="font">Join</span>
-                                <FontAwesomeIcon icon={faApple} />
-                                <span className="font-bold">Music</span>
+                            <a href="#" className="flex items-center gap-1 border border-white/40 px-4 py-2 rounded-full bg-white/70 group hover:bg-white/20 transition">
+                                <span className="group-hover:text-white lato-bold">Join</span>
+                                <FontAwesomeIcon icon={faArrowRight} className="group-hover:text-white group-hover:translate-x-1 transition-transform"/>
                             </a>
 
                         </div>
+                    </div>   
+
+                </div>
+
+
+                {/* Mobile Toggle*/}
+                <div className="flex xl:hidden items-center gap-4">
+
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-44 md:w-60 lg:w-88 opacity-100" : "w-0 opacity-0"}`}>
+                        <input type="text" placeholder="Search for music" className="w-full pl-2 sm:px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 outline-none"/>
                     </div>
+                    <Search onClick={()=> setOpenSearch(!openSearch)} className="w-5 h-5 sm:w-6 sm:h-6 cursor-pointer text-white hover:text-rose-400/60 transition"/>
+                    <button onClick={()=> setOpenMenu(true)} className="text-white cursor-pointer">
+                        <Menu className="w-6 h-6 sm:w-8 sm:h-8" />
+                    </button>
 
-                    {/* Mobile Toggle*/}
-                    <div className="flex lg:hidden items-center gap-4">
-
-                        <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-64 opacity-100" : "w-0 opacity-0"}`}>
-                            <input type="text" placeholder="Search for music" className="w-full px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 outline-none"/>
-                        </div>
-                        <Search onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 transition"/>
-                        <button onClick={()=> setOpenMenu(true)} className="text-white cursor-pointer">
-                            <Menu size={30} />
-                        </button>
-
-                    </div>
+                </div>
                 
             </nav>
 
+
             {/* Sidebar */}
             {/* Mobile Sidebar */}
-            <div className={`fixed top-0 left-0 h-full w-[100vw] bg-gray-900 z-50 transform transition-transform duration-300 lg:hidden 
+            <div className={`fixed top-0 left-0 h-full w-[100vw] bg-gray-900 z-100 transform transition-transform duration-300 xl:hidden 
             ${openMenu ? "translate-x-0" : "-translate-x-full"}`}>
 
                 <div className="flex items-center justify-between px-5 py-5 border-b border-gray-700">
 
-                    <div className="flex items-center gap-2">
-                        <img src={favicon} alt="yoursmusiclogo" className="w-8 h-8" />
-                        <span className="text-xl font-bold text-white tracking-wider lato-black-italic">Yours Music</span>
+                    <div className="flex items-center gap-2 select-none">
+                        <img src={favicon1} alt="yoursmusiclogo" className="w-6 sm:w-8 h-6 sm:h-8 rounded-full" />
+                        <Link to="/" onClick={closeSidebar} className="text-md sm:text-xl font-bold text-white tracking-wider lato-black-italic">Yours Music</Link>
                     </div>
                     <button onClick={() => setOpenMenu(false)}className="text-white cursor-pointer">
-                        <X size={30} />
+                        <X size={30} className="mr-4"/>
                     </button>
 
                 </div>
 
                 {/* Items */}
-                <ul className="flex flex-col gap-8 text-white font-bold text-2xl p-12 cursor-pointer">
-                    <li className="hover:text-purple-400 transition cursor-pointer">Download YoursMusic</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer my-2">Get The App</li>
+                <ul className="flex flex-col gap-8 text-white font-bold text-xl sm:text-2xl p-12 cursor-pointer">
+                    <li className="hover:text-purple-400 transition cursor-pointer">Download Yours Music</li>
+                    <Link to="/apps" onClick={closeSidebar} className="hover:text-purple-400 transition duration-300 cursor-pointer sm:my-2">Get The App</Link>
                     <li className="hover:text-purple-400 transition cursor-pointer">Pricing</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer my-2">Charts</li>
+                    <li className="hover:text-purple-400 transition cursor-pointer sm:my-2">Charts</li>
                     <li className="hover:text-purple-400 transition cursor-pointer">Voice Test</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer my-2">Fast Forward '26</li>
+                    <li className="hover:text-purple-400 transition cursor-pointer sm:my-2">Fast Forward '26</li>
                     <li className="hover:text-purple-400 transition cursor-pointer">Help</li>
                 </ul>
 
@@ -142,7 +146,7 @@ export default function Navbar(){
 
             {/* Background black */}
             {openMenu && (
-                <div onClick={()=> setOpenMenu(false)}className="fixed inset-0 bg-black/50 z-40 lg:hidden"></div>
+                <div onClick={()=> setOpenMenu(false)}className="fixed inset-0 bg-black/50 z-40 xl:hidden"></div>
             )}
             {/* Background black */}
         </section>
