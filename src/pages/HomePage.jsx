@@ -29,23 +29,23 @@ export default function HomePage(){
 
 
                 <div className="lg:flex-1 flex justify-center pt-2 pb-0 lg:py-6">
-                    <img src={banner1} alt="banner1" className="max-w-[500px] w-full object-contain" />
+                    <img src={banner1} alt="banner1" className="max-w-[450px] w-full object-contain" />
                 </div>
 
-                <div className="lg:flex-1 mt-0">
+                <div className="lg:flex-1 mt-10 lg:mt-0">
 
                     <h1 className="text-2xl md:text-5xl text-center lg:text-start font-bold leading-tight lato-black">Find Music <br className="hidden lg:block" />
                         <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent lato-regular">In Seconds</span>
                     </h1>
-                    <h4 className="font-bold text-center lg:text-start py-4 lg:py-2 lato-light">Find music, concerts and more with YoursMusic</h4>
+                    <h4 className="text-sm md:text-md font-bold text-center lg:text-start py-4 lg:py-2 lato-light">Find music, concerts and more with YoursMusic</h4>
                     <div className="flex items-center gap-3 bg-white/10 rounded-lg px-3 py-4 lg:w-[500px]">
                         <img src={qrimg} alt="qrcode" className="rounded-lg" />
                         <div>
-                            <h4 className="font-bold text-lg">Get the app</h4>
-                            <span className="text-white/40">Scan the code with your smart phone camera to download the free app</span>
+                            <h4 className="font-bold md:text-lg">Get the app</h4>
+                            <span className="text-sm md:text-md text-white/40">Scan the code with your smart phone camera to download the free app</span>
                         </div>
                     </div>
-                    <span className="block text-center lg:text-start py-3">Available on <a href="#" className="underline">iOS</a>, <a href="#" className="underline">Android</a>, and <a href="#" className="underline">more devices</a></span>
+                    <span className="text-sm md:text-md block text-center lg:text-start py-3">Available on <a href="#" className="underline">iOS</a>, <a href="#" className="underline">Android</a>, and <a href="#" className="underline">more devices</a></span>
 
                 </div>
 
@@ -61,22 +61,22 @@ export default function HomePage(){
                     <div className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden lg:px-16 lg:py-16">
                     
                         <div className="w-full lg:flex-1 relative rounded-[32px] lg:rounded-none overflow-hidden px-8 lg:px-16 py-10 lg:py-16">
-                            <video src="/fastforward.webm" autoPlay loop muted playsInline className="lg:max-w-[700px] w-full object-cover lg:object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.5)]"></video>
+                            <video src="/fastforward.webm" autoPlay loop muted playsInline className="max-w-[400px] lg:max-w-[700px] object-cover lg:object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.5)]"></video>
                             <div className="absolute inset-0 bg-black/40 lg:hidden"></div>
                         </div>
 
-                        <div className="absolute inset-0 z-10 flex flex-col justify-center text-white lg:static lg:flex-1 px-6 lg:px-0 lg:text-left">
+                        <div className="absolute inset-0 z-10 flex flex-col justify-center text-white lg:static lg:flex-1 px-6 mt-5 sm:mt-0 lg:px-0 lg:text-left">
 
-                            <h2 className="text-2xl sm:text-4xl md:text-6xl font-light leading-none lato-regular">
+                            <h2 className="text-xl sm:text-4xl md:text-6xl font-light leading-none lato-regular">
                                 Yours Music<br />
                                 Fast Forward
                             </h2>
 
-                            <h1 className="text-3xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight py-2">2026</h1>
-                            <p className="max-w-xl text-sm sm:text-lg md:text-2xl text-white/80 leading-relaxed mt-2 lato-light">Take a look ahead at some of the most exciting talent being discovered on YoursMusic</p>
+                            <h1 className="text-2xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight py-2">2026</h1>
+                            <p className="max-w-xl text-xs sm:text-lg md:text-2xl text-white/80 leading-relaxed mt-2 lato-light">Take a look ahead at some of the most exciting talent being discovered on YoursMusic</p>
 
                             <div className="mt-6">
-                                <a href="#" className="sm:text-xl font-semibold inline-flex items-center justify-center bg-white text-black rounded-full px-4 sm:px-10 py-2 sm:py-4 hover:scale-105 transition">
+                                <a href="#" className="text-sm sm:text-xl font-semibold inline-flex items-center justify-center bg-white text-black rounded-full px-4 sm:px-10 py-2 sm:py-4 hover:scale-105 transition">
                                     See the List
                                 </a>
                             </div>

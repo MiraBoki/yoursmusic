@@ -43,18 +43,18 @@ export default function Navbar(){
         <section>
 
             {/* Navbar */}
-            <nav className={`fixed top-0 mt-4 left-[50%] -translate-x-[50%] z-100 w-full sm:w-[90%] flex items-center justify-center px-4 sm:px-10 ${scrolled ? "py-3" : "py-5"} transition-all duration-300 ease-out rounded-2xl
+            <nav className={`fixed top-0 left-[50%] -translate-x-[50%] z-100 w-full sm:w-[95%] xl:w-[90%] flex items-center justify-center px-4 sm:px-6 mt-2 ${scrolled ? "py-3" : "py-2"} transition-all duration-300 ease-out rounded-2xl
             ${scrolled ? "bg-gradient-to-r from-violet-600/20 via-purple-500/20 to-slate-600/20 shadow-lg backdrop-blur-md border-b border-white/10" : "bg-transparent backdrop-blur-sm shadow-none border-b border-transparent"}`}>
             
                 <div className="w-full flex items-center justify-between">
 
                     <div className="flex items-center gap-2 select-none">
-                        <img src={favicon1} alt="yoursmusiclogo" className="w-6 sm:w-8 h-6 sm:h-8 rounded-full" />
-                        <Link to="/" className="text-md sm:text-xl font-bold text-white tracking-wider lato-black-italic">Yours Music</Link>
+                        <img src={favicon1} alt="yoursmusiclogo" className="w-4 sm:w-6 h-4 sm:h-6 rounded-full" />
+                        <Link to="/" className="text-sm sm:text-lg font-bold text-white tracking-wider lato-black-italic">Yours Music</Link>
                     </div>
 
-                    <div className="hidden xl:block select-none">
-                        <ul className="text-sm font-bold text-white flex items-center p-3 gap-7 cursor-pointer lato-black">
+                    <div className="hidden lg:block select-none">
+                        <ul className="text-xs font-bold text-white flex items-center gap-4 xl:gap-7 p-2 mr-10 xl:mr-0 cursor-pointer lato-black">
                             <Link to="/apps" className="transition duration-300 hover:text-gray-600/80">Get The App</Link>
                             <Link to="/pricings" className="transition duration-300 hover:text-gray-600/80">Pricing</Link>
                             <Link to="/charts" className="transition duration-300 hover:text-gray-600/80">Charts</Link>
@@ -64,15 +64,24 @@ export default function Navbar(){
                     </div>
 
                     <div className="flex items-center gap-3">
-                        <div className="relative hidden xl:flex items-center gap-3 text-black">
+                        <div className="relative hidden lg:flex items-center gap-3 text-black">
 
-                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-46 xl:w-60 2xl:w-84 opacity-100" : "w-0 opacity-0"}`}>
+                            {/* <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-46 xl:w-60 2xl:w-84 opacity-100" : "w-0 opacity-0"}`}>
                                 <input type="text" placeholder="Search for music" className="w-full px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 outline-none"/>
                             </div>
-                            <Search onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 transition"/>
+                            <Search onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 transition"/> */}
+                            <div className={`overflow-hidden transition-all duration-300 ease-in-out ${ openSearch ? "w-52 xl:w-64 2xl:w-80 opacity-100" : "w-10"}`}>
+                                
+                                <div className={`flex items-center justify-between rounded-full transition-all duration-300 ${ openSearch ? 
+                                "px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20" : ""}`}>
+                                    <input autofocus type="text" placeholder="Search for music" className={`text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
+                                    openSearch ? "opacity-100" : "opacity-0 w-0 pointer-events-none" }`}/>
+                                    <Search size={18} onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
+                                </div>
+                            </div>
                             <a href="#" className="flex items-center gap-1 border border-white/40 px-4 py-2 rounded-full bg-white/70 group hover:bg-white/20 transition">
-                                <span className="group-hover:text-white lato-bold">Join</span>
-                                <FontAwesomeIcon icon={faArrowRight} className="group-hover:text-white group-hover:translate-x-1 transition-transform"/>
+                                <span className="text-sm group-hover:text-white lato-bold">Join</span>
+                                <FontAwesomeIcon icon={faHeadphones} className="text-xs group-hover:text-white group-hover:translate-x-1 transition-transform"/>
                             </a>
 
                         </div>
@@ -82,14 +91,24 @@ export default function Navbar(){
 
 
                 {/* Mobile Toggle*/}
-                <div className="flex xl:hidden items-center gap-4">
+                <div className="flex lg:hidden items-center gap-4">
 
-                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-44 md:w-60 lg:w-88 opacity-100" : "w-0 opacity-0"}`}>
+                    {/* <div className={`overflow-hidden transition-all duration-300 ease-in-out ${openSearch ? "w-44 md:w-60 lg:w-88 opacity-100" : "w-0 opacity-0"}`}>
                         <input type="text" placeholder="Search for music" className="w-full pl-2 sm:px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-white placeholder:text-white/50 outline-none"/>
                     </div>
-                    <Search onClick={()=> setOpenSearch(!openSearch)} className="w-5 h-5 sm:w-6 sm:h-6 cursor-pointer text-white hover:text-rose-400/60 transition"/>
+                    <Search onClick={()=> setOpenSearch(!openSearch)} className="w-5 h-5 sm:w-6 sm:h-6 cursor-pointer text-white hover:text-rose-400/60 transition"/> */}
+                    <div className={`overflow-hidden transition-all duration-300 ease-in-out ${ openSearch ? "w-auto xl:w-60 2xl:w-88 opacity-100" : "w-10"}`}>
+                
+                        <div className={`flex items-center justify-between rounded-full transition-all duration-300 ${ openSearch ? 
+                        "px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20" : ""}`}>
+                            <input autofocus type="text" placeholder="Search for music" className={`text-xs sm:text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
+                            openSearch ? "opacity-100" : "opacity-0 w-0 pointer-events-none" }`}/>
+                            <Search size={18} onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
+                        </div>
+                        
+                    </div>
                     <button onClick={()=> setOpenMenu(true)} className="text-white cursor-pointer">
-                        <Menu className="w-6 h-6 sm:w-8 sm:h-8" />
+                        <Menu className="w-4 h-4 sm:w-6 sm:h-6" />
                     </button>
 
                 </div>
