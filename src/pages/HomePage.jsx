@@ -6,10 +6,16 @@ import { ChevronLeft, ChevronRight, Play } from 'lucide-react';
 
 import homeimg1 from "../assets/homeimgs/homeimg1.webp"
 import banner1 from "../assets/homeimgs/banner.png"
+import banner6 from "../assets/getappimgs/banner6.png"
+
 import qrimg from "../assets/homeimgs/qr.png"
 import songchart from "../assets/homeimgs/songchart.jpg"
 import songchart2 from "../assets/homeimgs/songchart2.jpg"
 import songchart3 from "../assets/homeimgs/songchart3.jpg"
+
+import FadeInSection from "../components/animation/FadeInSection.jsx";
+import FadeInSection2 from "../components/animation/FadeInSection2.jsx";
+import FadeInSection3 from "../components/animation/FadeInSection3.jsx";
 
 
 export default function HomePage(){
@@ -17,6 +23,7 @@ export default function HomePage(){
     return(
         <div className="w-full min-h-screen bg-gray-900">
                 
+            <FadeInSection>
             {/* Body Section 1 */}
             <main className="relative overflow-hidden min-w-full min-h-screen flex flex-col-reverse lg:flex-row items-center justify-center gap-2 lg:gap-10 text-white mx-auto px-6 pt-2 pb-8 lg:py-0">
                 
@@ -29,7 +36,7 @@ export default function HomePage(){
 
 
                 <div className="lg:flex-1 flex justify-center pt-2 pb-0 lg:py-6">
-                    <img src={banner1} alt="banner1" className="max-w-[450px] w-full object-contain" />
+                    <img src={banner6} alt="banner6" className="max-w-[250px] w-full object-contain" />
                 </div>
 
                 <div className="lg:flex-1 mt-10 lg:mt-0">
@@ -45,13 +52,13 @@ export default function HomePage(){
                             <span className="text-sm md:text-md text-white/40">Scan the code with your smart phone camera to download the free app</span>
                         </div>
                     </div>
-                    <span className="text-sm md:text-md block text-center lg:text-start py-3">Available on <a href="#" className="underline">iOS</a>, <a href="#" className="underline">Android</a>, and <a href="#" className="underline">more devices</a></span>
+                    <span className="text-sm md:text- block text-center lg:text-start py-3">Available on <a href="#" className="underline">iOS</a>, <a href="#" className="underline">Android</a>, and <a href="#" className="underline">more devices</a></span>
 
                 </div>
 
             </main>
             {/* Body Section 1 */}
-
+            </FadeInSection>
 
             {/* Body Section 2 */}
             <section className="w-full px-6 lg:px-12 py-10">
@@ -60,23 +67,23 @@ export default function HomePage(){
 
                     <div className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden lg:px-16 lg:py-16">
                     
-                        <div className="w-full lg:flex-1 relative rounded-[32px] lg:rounded-none overflow-hidden px-8 lg:px-16 py-10 lg:py-16">
-                            <video src="/fastforward.webm" autoPlay loop muted playsInline className="max-w-[400px] lg:max-w-[700px] object-cover lg:object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.5)]"></video>
+                        <div className="w-full lg:flex-1 relative rounded-[32px] lg:rounded-none overflow-hidden px-8 lg:px-16 py-5 sm:py-10 lg:py-16">
+                            <video src="/fastforward.webm" autoPlay loop muted playsInline className="max-w-[500px] sm:max-w-[600px] lg:max-w-[700px] mx-auto w-full object-cover lg:object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.5)]"></video>
                             <div className="absolute inset-0 bg-black/40 lg:hidden"></div>
                         </div>
 
-                        <div className="absolute inset-0 z-10 flex flex-col justify-center text-white lg:static lg:flex-1 px-6 mt-5 sm:mt-0 lg:px-0 lg:text-left">
+                        <div className="absolute inset-0 z-10 flex flex-col justify-end sm:justify-center text-white lg:static lg:flex-1 px-6 mb-4 sm:mb-0 lg:px-0 lg:text-left">
 
-                            <h2 className="text-xl sm:text-4xl md:text-6xl font-light leading-none lato-regular">
+                            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-light leading-none lato-regular">
                                 Yours Music<br />
                                 Fast Forward
                             </h2>
 
-                            <h1 className="text-2xl sm:text-6xl md:text-8xl font-black leading-none tracking-tight py-2">2026</h1>
-                            <p className="max-w-xl text-xs sm:text-lg md:text-2xl text-white/80 leading-relaxed mt-2 lato-light">Take a look ahead at some of the most exciting talent being discovered on YoursMusic</p>
+                            <h1 className="text-2xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-none tracking-tight py-2">2026</h1>
+                            <p className="max-w-xl text-xs sm:text-md md:text-lg lg:text-xl text-white/80 leading-relaxed mt-2 lato-light">Take a look ahead at some of the most exciting talent being discovered on YoursMusic</p>
 
                             <div className="mt-6">
-                                <a href="#" className="text-sm sm:text-xl font-semibold inline-flex items-center justify-center bg-white text-black rounded-full px-4 sm:px-10 py-2 sm:py-4 hover:scale-105 transition">
+                                <a href="#" className="text-sm sm:text-lg md:text-xl font-semibold inline-flex items-center justify-center bg-white text-black rounded-full px-4 md:px-7 lg:px-10 py-2 md:py-3 lg:py-4 hover:bg-white/40 hover:text-white hover:scale-105 transition">
                                     See the List
                                 </a>
                             </div>
@@ -101,13 +108,15 @@ export default function HomePage(){
                 </div>
                 {/* Background Gradient  */}
 
+                <FadeInSection2>
                 {/* Title  */}
                 <header className="mt-10">
-                    <h3 className="text-lg sm:text-2xl font-bold uppercase text-white text-center lato-black">Global Top 200</h3>
-                    <h1 className="text-3xl sm:text-5xl text-white text-center leading-tight py-3 lato-bold">Top songs being discovered around the world right now</h1>
-                    <span className="text-md sm:text-xl block text-white text-center lato-regular">See who made it on the list of the top songs worldwide on YoursMusic</span>
+                    <h3 className="text-md sm:text-2xl font-bold uppercase text-white text-center lato-black">Global Top 200</h3>
+                    <h1 className="text-2xl sm:text-5xl text-white text-center leading-tight py-3 lato-bold">Top songs being discovered around the world right now</h1>
+                    <span className="text-sm sm:text-xl block text-white text-center lato-regular">See who made it on the list of the top songs worldwide on YoursMusic</span>
                 </header>
                 {/* Title  */}
+                </FadeInSection2>
 
                 {/* Chart  */}
                 <div className="max-w-6xl mx-auto mt-10">
@@ -144,17 +153,19 @@ export default function HomePage(){
             {/* Body Section 4 Global Top 200 Chart */}
             <section className="w-full px-6 lg:px-12 py-16">
 
+                
                 {/* Header */}
                 <div className="max-w-7xl mx-auto flex items-center justify-between border-b border-white/10 pb-5">
 
-                    <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight lato-bold">Global Top 200 Chart</h1>
-
-                    <button className="flex items-center gap-2 text-purple-400 font-bold uppercase tracking-wide hover:text-purple-300 transition lato-regular cursor-pointer">
+                    <FadeInSection3>
+                    <h1 className="text-xl sm:text-4xl font-black text-white tracking-tight lato-bold">Global Top 200 Chart</h1>
+                    </FadeInSection3>
+                    <button className="text-sm sm:text-md flex items-center gap-2 text-purple-400 font-bold uppercase tracking-wide hover:text-purple-300 transition lato-regular cursor-pointer">
                         See All<span className="text-2xl">→</span>
                     </button>
 
                 </div>
-
+                
                 {/* Music Slider */}
                 <div className="max-w-7xl mx-auto mt-10 relative">
 
@@ -181,7 +192,7 @@ export default function HomePage(){
 
                                     <div key={song} className="flex items-center gap-4 py-5 group cursor-pointer">
 
-                                        <span className="text-3xl font-black text-white/90 w-10">
+                                        <span className="text-2xl sm:text-3xl font-black text-white/90 w-10">
                                             {song}
                                         </span>
 
@@ -204,8 +215,8 @@ export default function HomePage(){
                                         {/* Song Info */}
                                         <div className="text-white">
 
-                                            <h3 className="font-bold text-lg leading-tight">Blinding Lights</h3>
-                                            <p className="text-white/60 text-base">The Weeknd</p>
+                                            <h3 className="font-bold text-md sm:text-lg leading-tight">Blinding Lights</h3>
+                                            <p className="text-white/60 text-sm sm:text-base">The Weeknd</p>
 
                                         </div>
 
@@ -261,10 +272,12 @@ export default function HomePage(){
                 {/* Background Gradient  */}
 
                 {/* Header */}
+                <FadeInSection3>
                 <div className="max-w-7xl mx-auto flex items-center justify-between border-b border-white/10 pb-5">
-                    <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight lato-bold">Featured Top Artists</h1>
+                    <h1 className="text-xl sm:text-4xl font-black text-white tracking-tight lato-bold">Featured Top Artists</h1>
                 </div>
-                
+                </FadeInSection3>
+
                 <div className="relative max-w-7xl mx-auto mt-10">
 
                     <div className="absolute hidden sm:block sm:right-0 top-0 z-20 h-full w-24 bg-gradient-to-l from-gray-900 via-gray-900/80 to-transparent pointer-events-none"></div>
@@ -291,8 +304,8 @@ export default function HomePage(){
                                 {/* Text */}
                                 <div className="absolute bottom-5 left-5 text-white">
 
-                                    <h2 className="text-2xl font-black">The Weeknd</h2>
-                                    <p className="text-white/70 text-sm mt-1">12.5M Monthly Listeners</p>
+                                    <h2 className="text-xl sm:text-2xl lato-black">The Weeknd</h2>
+                                    <p className="text-white/70 text-xs sm:text-sm mt-1 lato-light">12.5M Monthly Listeners</p>
 
                                 </div>
 
@@ -339,10 +352,12 @@ export default function HomePage(){
             <section className="w-full px-6 lg:px-12 py-16">
 
                 {/* Header */}
+                <FadeInSection3>
                 <div className="max-w-7xl mx-auto flex items-center justify-between border-b border-white/10 pb-5">
-                    <h1 className="text-2xl sm:text-4xl font-black text-white tracking-tight lato-bold">More Charts</h1>
+                    <h1 className="text-xl sm:text-4xl font-black text-white tracking-tight lato-bold">More Charts</h1>
                 </div>
-
+                </FadeInSection3>
+                
                 {/* Charts Slider */}
                 <div className="max-w-7xl mx-auto mt-10 relative">
 
@@ -373,18 +388,18 @@ export default function HomePage(){
                                 {/* Content */}
                                 <div className="relative z-10 h-full flex flex-col justify-end p-8 text-white">
 
-                                    <h3 className="text-2xl sm:text-5xl font-black leading-none lato-bold-italic">Top 50</h3>
+                                    <h3 className="text-xl sm:text-5xl font-black leading-none lato-bold-italic">Top 50</h3>
 
-                                    <h2 className="text-3xl sm:text-6xl font-black leading-none mt-2 lato-black">New York City</h2>
+                                    <h2 className="text-2xl sm:text-6xl font-black leading-none mt-2 lato-black">New York City</h2>
 
-                                    <p className="text-white/75 text-sm sm:text-lg max-w-md mt-4 leading-relaxed lato-regular">
+                                    <p className="text-white/75 text-xs sm:text-lg max-w-md mt-4 leading-relaxed lato-regular">
                                         Featuring songs from Drake, Future, Molly Santana,
                                         Dave and more
                                     </p>
 
                                     {/* Button */}
                                     <div className="mt-6">
-                                        <button className="px-8 py-3 rounded-2xl bg-white/20 backdrop-blur-md border border-white/10 text-white font-bold hover:bg-purple-500 transition-all duration-300 cursor-pointer">
+                                        <button className="px-6 sm:px-8 py-2 sm:py-3 rounded-2xl bg-white/20 backdrop-blur-md border border-white/10 text-white font-bold hover:bg-purple-500 transition-all duration-300 cursor-pointer">
                                             VIEW
                                         </button>
                                     </div>

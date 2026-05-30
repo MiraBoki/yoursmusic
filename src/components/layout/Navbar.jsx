@@ -74,7 +74,7 @@ export default function Navbar(){
                                 
                                 <div className={`flex items-center justify-between rounded-full transition-all duration-300 ${ openSearch ? 
                                 "px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20" : ""}`}>
-                                    <input autofocus type="text" placeholder="Search for music" className={`text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
+                                    <input autoFocus type="text" placeholder="Search for music" className={`text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
                                     openSearch ? "opacity-100" : "opacity-0 w-0 pointer-events-none" }`}/>
                                     <Search size={18} onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
                                 </div>
@@ -101,7 +101,7 @@ export default function Navbar(){
                 
                         <div className={`flex items-center justify-between rounded-full transition-all duration-300 ${ openSearch ? 
                         "px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20" : ""}`}>
-                            <input autofocus type="text" placeholder="Search for music" className={`text-xs sm:text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
+                            <input autoFocus type="text" placeholder="Search for music" className={`text-xs sm:text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
                             openSearch ? "opacity-100" : "opacity-0 w-0 pointer-events-none" }`}/>
                             <Search size={18} onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
                         </div>
@@ -118,7 +118,7 @@ export default function Navbar(){
 
             {/* Sidebar */}
             {/* Mobile Sidebar */}
-            <div className={`fixed top-0 left-0 h-full w-[100vw] bg-gray-900 z-100 transform transition-transform duration-300 xl:hidden 
+            <div className={`fixed top-0 left-0 h-screen w-screen bg-gray-900 z-100 transform transition-transform duration-300 xl:hidden flex flex-col
             ${openMenu ? "translate-x-0" : "-translate-x-full"}`}>
 
                 <div className="flex items-center justify-between px-5 py-5 border-b border-gray-700">
@@ -133,28 +133,29 @@ export default function Navbar(){
 
                 </div>
 
-                {/* Items */}
-                <ul className="flex flex-col gap-8 text-white font-bold text-xl sm:text-2xl p-12 cursor-pointer">
-                    <li className="hover:text-purple-400 transition cursor-pointer">Download Yours Music</li>
-                    <Link to="/apps" onClick={closeSidebar} className="hover:text-purple-400 transition duration-300 cursor-pointer sm:my-2">Get The App</Link>
-                    <li className="hover:text-purple-400 transition cursor-pointer">Pricing</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer sm:my-2">Charts</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer">Voice Test</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer sm:my-2">Fast Forward '26</li>
-                    <li className="hover:text-purple-400 transition cursor-pointer">Help</li>
-                </ul>
+                <div className="flex-1 overflow-y-auto">
+                    {/* Items */}
+                    <ul className="flex flex-col gap-8 text-white lato-bold text-lg sm:text-xl p-6 sm:p-12 cursor-pointer">
+                        <li className="hover:text-purple-400 transition cursor-pointer">Download Yours Music</li>
+                        <Link to="/apps" onClick={closeSidebar} className="hover:text-purple-400 transition duration-300 cursor-pointer sm:my-2">Get The App</Link>
+                        <li className="hover:text-purple-400 transition cursor-pointer">Pricing</li>
+                        <li className="hover:text-purple-400 transition cursor-pointer sm:my-2">Charts</li>
+                        <li className="hover:text-purple-400 transition cursor-pointer">Voice Test</li>
+                        <li className="hover:text-purple-400 transition cursor-pointer sm:my-2">Fast Forward '26</li>
+                        <li className="hover:text-purple-400 transition cursor-pointer">Help</li>
+                    </ul>
+                </div>
 
                 {/* Bottom Button */}
-                <div className="w-full bg-white/20 absolute bottom-8 left-1/2 -translate-x-1/2 px-6 py-3 rounded-lg md:flex md:justify-center md:gap-4">
+                <div className="bg-white/20 px-6 py-3 md:flex md:justify-center md:gap-4">
 
-                    <div className="py-4 text-center">
-                        <span className="text-xl text-white font-bold">Join to Apple Music to play songs in full within YoursMusic.</span>
+                    <div className="py-2 sm:py-4 text-center">
+                        <span className="text-lg sm:text-xl text-white font-bold">Join to Apple Music to play songs in full within YoursMusic.</span>
                     </div>
                     <div className="flex items-center justify-center">
-                        <a href="#" className="inline-flex items-center justify-center gap-2 border border-white/20 px-4 py-3 rounded-full bg-white text-black text-lg font-semibold">
-                            <span>Join</span>
-                            <FontAwesomeIcon icon={faApple} />
-                            <span>Music</span>
+                        <a href="#" className="font-semibold inline-flex items-center justify-center gap-2 border border-white/20 rounded-full bg-white group hover:bg-white/20 px-4 py-3">
+                            <span className="text-sm group-hover:text-white lato-bold">Join</span>
+                            <FontAwesomeIcon icon={faHeadphones} className="text-xs group-hover:text-white group-hover:translate-x-1 transition-transform"/>
                         </a>
                     </div>
 
