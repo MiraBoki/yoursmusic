@@ -60,7 +60,7 @@ export default function GetAppPage(){
                                             iOS<ArrowUpRight size={16} />
                                         </a>
                                         <span className="text-white/40">|</span>
-                                        <a href="#" className="flex items-center gap-1 text-blue-400 lato-bold hover:text-blue-300 transition">
+                                        <a href="https://play.google.com/store/apps/details?id=com.yours4u.music" target="_blank" className="flex items-center gap-1 text-blue-400 lato-bold hover:text-blue-300 transition">
                                             Android<ArrowUpRight size={16} />
                                         </a>
                                     </div>

@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
 import { Search, Menu, X } from "lucide-react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
@@ -10,9 +10,33 @@ import favicon1 from "../../assets/favicon1.png"
 
 export default function Navbar(){
 
+    const navbarRef = useRef(null);
     const [openMenu, setOpenMenu] = useState(false)
     const [scrolled, setScrolled] = useState(false)
     const [openSearch, setOpenSearch] = useState(false)
+
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (
+                navbarRef.current &&
+                !navbarRef.current.contains(event.target)
+            ) {
+                setOpenSearch(false);
+            }
+        };
+
+        document.addEventListener(
+            "mousedown",
+            handleClickOutside
+        );
+
+        return () => {
+            document.removeEventListener(
+                "mousedown",
+                handleClickOutside
+            );
+        };
+    }, []);
 
     // Side Bar Resize 
     useEffect(() => {
@@ -38,12 +62,12 @@ export default function Navbar(){
     }, [])
 
     const closeSidebar = ()=> setOpenMenu(false);
-
+    
     return(
         <section>
 
             {/* Navbar */}
-            <nav className={`fixed top-0 left-[50%] -translate-x-[50%] z-100 w-full sm:w-[95%] xl:w-[90%] flex items-center justify-center px-4 sm:px-6 mt-2 ${scrolled ? "py-3" : "py-2"} transition-all duration-300 ease-out rounded-2xl
+            <nav ref={navbarRef} className={`fixed top-0 left-[50%] -translate-x-[50%] z-100 w-full sm:w-[95%] xl:w-[90%] flex items-center justify-center px-4 sm:px-6 mt-2 ${scrolled ? "py-3" : "py-2"} transition-all duration-300 ease-out rounded-2xl
             ${scrolled ? "bg-gradient-to-r from-violet-600/20 via-purple-500/20 to-slate-600/20 shadow-lg backdrop-blur-md border-b border-white/10" : "bg-transparent backdrop-blur-sm shadow-none border-b border-transparent"}`}>
             
                 <div className="w-full flex items-center justify-between">
@@ -76,7 +100,7 @@ export default function Navbar(){
                                 "px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20" : ""}`}>
                                     <input autoFocus type="text" placeholder="Search for music" className={`text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
                                     openSearch ? "opacity-100" : "opacity-0 w-0 pointer-events-none" }`}/>
-                                    <Search size={18} onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
+                                    <Search size={18} onClick={(e)=> {e.stopPropagation(); setOpenSearch(true);}} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
                                 </div>
                             </div>
                             <a href="#" className="flex items-center gap-1 border border-white/40 px-4 py-2 rounded-full bg-white/70 group hover:bg-white/20 transition">
@@ -103,7 +127,7 @@ export default function Navbar(){
                         "px-3 py-2 bg-white/10 backdrop-blur-md border border-white/20" : ""}`}>
                             <input autoFocus type="text" placeholder="Search for music" className={`text-xs sm:text-sm bg-transparent text-white placeholder:text-white/50 outline-none flex-1 transition-opacity duration-300 ${
                             openSearch ? "opacity-100" : "opacity-0 w-0 pointer-events-none" }`}/>
-                            <Search size={18} onClick={()=> setOpenSearch(!openSearch)} className="cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
+                            <Search onClick={(e)=> {e.stopPropagation(); setOpenSearch(true);}} className="w-4 h-4 sm:w-5 sm:h-5 cursor-pointer text-white hover:text-rose-400/60 shrink-0"/>
                         </div>
                         
                     </div>

@@ -21,7 +21,7 @@ import FadeInSection3 from "../components/animation/FadeInSection3.jsx";
 export default function HomePage(){
 
     return(
-        <div className="w-full min-h-screen bg-gray-900">
+        <div className="w-full min-h-screen bg-gray-900 scroll-x-hidden overflow-hidden">
                 
             <FadeInSection>
             {/* Body Section 1 */}
@@ -65,11 +65,11 @@ export default function HomePage(){
 
                 <div className="max-w-6xl mx-auto rounded-[40px] bg-gradient-to-r from-black via-[#001a4d] to-[#002766] overflow-hidden">
 
-                    <div className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden lg:px-16 lg:py-16">
+                    <div className="relative flex flex-col lg:flex-row items-center justify-between overflow-hidden lg:px-16 py-10 sm:py-0 lg:py-16">
                     
                         <div className="w-full lg:flex-1 relative rounded-[32px] lg:rounded-none overflow-hidden px-8 lg:px-16 py-5 sm:py-10 lg:py-16">
                             <video src="/fastforward.webm" autoPlay loop muted playsInline className="max-w-[500px] sm:max-w-[600px] lg:max-w-[700px] mx-auto w-full object-cover lg:object-contain drop-shadow-[0_0_40px_rgba(59,130,246,0.5)]"></video>
-                            <div className="absolute inset-0 bg-black/40 lg:hidden"></div>
+                            <div className="absolute inset-0 bg-black/40 hidden sm:block lg:hidden"></div>
                         </div>
 
                         <div className="absolute inset-0 z-10 flex flex-col justify-end sm:justify-center text-white lg:static lg:flex-1 px-6 mb-4 sm:mb-0 lg:px-0 lg:text-left">
